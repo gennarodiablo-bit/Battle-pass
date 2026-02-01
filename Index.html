@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Battle Pass</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      width: 300px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 15px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: gold;
+      color: black;
+      font-weight: bold;
+    }
+    button:hover {
+      background: orange;
+    }
+    .hidden {
+      display: none;
+    }
+    .success {
+      color: #00ff99;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🎮 Battle Pass Sanità</h1>
+    <h2>Membri Speciali:</h2>
+    <p>Giusy<br>Tania<br>Antonio sbancatore</p>
+
+    <button id="buyBtn" onclick="startPayment()">
+      Per comprare battle pass clicca qua
+    </button>
+
+    <p id="loading" class="hidden">⏳ Elaborazione pagamento...</p>
+    <p id="success" class="hidden success">✅ TRANSAZIONE COMPLETATA</p>
+  </div>
+
+  <script>
+    function startPayment() {
+      document.getElementById("buyBtn").style.display = "none";
+      document.getElementById("loading").classList.remove("hidden");
+
+      setTimeout(() => {
+        document.getElementById("loading").classList.add("hidden");
+        document.getElementById("success").classList.remove("hidden");
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
